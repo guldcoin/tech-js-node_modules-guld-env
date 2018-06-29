@@ -56,5 +56,6 @@ module.exports = {
   getEnv: getEnv,
   getOS: getOS,
   getDist: getDist,
-  getRelease: getRelease
+  getRelease: getRelease,
+  setGlobal: setGlobal
 }

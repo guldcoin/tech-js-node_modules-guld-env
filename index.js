@@ -21,10 +21,10 @@ function setGlobal (key, v) {
   return v
 }
 
-function getEnv () {
-  if (global.ENV) return global.ENV
+function getJS () {
+  if (global.JS) return global.JS
   browser = getBrowser()
-  return setGlobal('ENV', `${browser.name}@${browser.version}`)
+  return setGlobal('JS', `${browser.name}@${browser.version}`)
 }
 
 async function getOS () {
@@ -53,7 +53,7 @@ async function getRelease () {
 }
 
 module.exports = {
-  getEnv: getEnv,
+  getJS: getJS,
   getOS: getOS,
   getDist: getDist,
   getRelease: getRelease,

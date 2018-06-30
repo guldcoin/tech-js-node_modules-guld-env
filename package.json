@@ -1,11 +1,8 @@
 {
   "name": "guld-env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guld environment detection module.",
   "main": "index.js",
-  "bin": {
-    "guld-env": "./cli.js"
-  },
   "scripts": {
     "test": "./node_modules/mocha/bin/_mocha",
     "lint": "eslint --env browser *.js*",

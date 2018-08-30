@@ -10,5 +10,8 @@
         "linebreak-style": ["error", "unix"],
         "camelcase": ["error", {"properties": "always"}],
         "prefer-template": "error"
+    },
+    "globals": {
+      "guldEnv": false
     }
 }

@@ -3,10 +3,14 @@
   "version": "1.0.14",
   "description": "Guld environment detection module.",
   "main": "index.js",
+  "browser": "guld-env.min.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/_mocha",
-    "lint": "eslint --env browser *.js*",
-    "fix": "eslint --fix *.js*"
+    "test": "npm run test:browser && npm run test:node",
+    "test:browser": "mochify test/browser.js --url file://$PWD/test/test.html",
+    "test:node": "mocha test/node.js",
+    "lint": "eslint --env browser *.js* test/*.js",
+    "fix": "eslint --fix *.js* test/*.js",
+    "build": "webpack-cli"
   },
   "keywords": [
     "guld",
@@ -35,7 +39,9 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.1.0",
     "mocha": "^5.2.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
   },
   "pre-commit": [
     "lint",
@@ -45,6 +51,6 @@
   "engines": {
     "node": ">=7"
   },
-  "homepage": "https://github.com/isysd/tech-js-node_modules-guld-env#readme",
-  "repository": "git@github.com:isysd/tech-js-node_modules-guld-env.git"
+  "homepage": "https://bitbucket.org/isysd/tech-js-node_modules-guld-env#readme",
+  "repository": "git@bitbucket.org:isysd/tech-js-node_modules-guld-env.git"
 }

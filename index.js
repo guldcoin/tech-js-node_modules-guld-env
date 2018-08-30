@@ -1,10 +1,14 @@
-#!/usr/bin/env node
 const pify = require('pify')
 const detectBrowser = require('detect-browser')
-const getos = pify(require('getos'))
 const global = require('window-or-global')
+var getos
 var gotos
 var browser
+try {
+  getos = pify(require('getos'))
+} catch (e) {
+  getos = async function () {}
+}
 
 async function getGotOs () {
   if (gotos === undefined) gotos = await getos()
@@ -33,7 +37,7 @@ async function getOS () {
   if (browser && browser.os && browser.os !== '') return setGlobal('OS', browser.os)
   else {
     gotos = await getGotOs()
-    if (gotos.os) return setGlobal('OS', gotos.os)
+    if (gotos && gotos.os) return setGlobal('OS', gotos.os)
   }
   return ''
 }
@@ -48,7 +52,7 @@ async function getDist () {
 async function getRelease () {
   if (global.OSRELEASE) return global.OSRELEASE
   gotos = await getGotOs()
-  if (gotos.release) return setGlobal('OSRELEASE', `${gotos.release} ${gotos.codename}`)
+  if (gotos && gotos.release) return setGlobal('OSRELEASE', `${gotos.release} ${gotos.codename}`)
   return ''
 }
 

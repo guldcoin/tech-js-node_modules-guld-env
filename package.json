@@ -50,6 +50,6 @@
   "engines": {
     "node": ">=7"
   },
-  "homepage": "https://bitbucket.org/isysd/tech-js-node_modules-guld-env#readme",
+  "homepage": "https://bitbucket.org/isysd/tech-js-node_modules-guld-env",
   "repository": "git@bitbucket.org:isysd/tech-js-node_modules-guld-env.git"
 }

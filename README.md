@@ -20,19 +20,32 @@ npm i guld-env
 ### Usage
 
 ```
-// syncronous
-console.log(getJS()) // node@10.5.0
+// properties
+console.log(guldEnv.name) // chrome
+console.log(guldEnv.version) // 70.x.x
+console.log(guldEnv.JS) // chrome@70.x.x
+console.log(guldEnv.protocol) // file
 
 // async
-getDist().then(console.log) // Ubuntu Linux
-getOS().then(console.log) // linux
-getRelease().then(console.log) // 18.04 bionic
+guldEnv.os().then(console.log)
+/*
+{ os: 'linux',
+  dist: 'Ubuntu',
+  codename: 'bionic',
+  release: '18.04' }
+*/
 ```
 
 ##### Node
 
 ```
-const { getEnv, getDist, getOS, getRelease } = require('guld-env')
+const guldEnv = require('guld-env')
+```
+
+##### Browser
+
+```
+<script src="guld-env.min.js"></script>
 ```
 
 ##### CLI

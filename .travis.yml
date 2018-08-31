@@ -3,20 +3,10 @@ node_js:
   - "5"
   - "7"
   - "10"
-env:
-  - DISPLAY=:99.0
-addons:
-  - chrome: stable
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - libnss3
-      - google-chrome-stable
+sudo: false
+script:
+  - npm test -- --allow-chrome-as-root
 cache:
   directories:
     - node_modules
-before_install:
-  - sh -e /etc/init.d/xvfb start
 

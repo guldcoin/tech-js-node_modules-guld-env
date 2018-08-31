@@ -1,5 +1,7 @@
 # guld-env
 
+[![npm](https://img.shields.io/npm/v/guld-env.svg)](https://www.npmjs.com/package/guld-env) [![Build Status](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env.svg?branch=guld)](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env)
+
 Guld environment detection and configuration module.
 
 ### Example Output

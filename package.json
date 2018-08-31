@@ -1,6 +1,6 @@
 {
   "name": "guld-env",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Guld environment detection module.",
   "main": "index.js",
   "browser": "guld-env.min.js",

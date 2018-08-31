@@ -1,8 +1,13 @@
 /* eslint-env mocha */
-const assert = require('chai').assert
+const chai = require('chai')
+
+require('./general.js')
 
 describe('chromium', function () {
-  it('getJS', function () {
-    assert.isTrue(guldEnv.getJS().startsWith('chrome@'))
+  it('JS is string of name@version', function () {
+    chai.assert.isTrue(guldEnv.JS.startsWith('chrome@'))
+  })
+  it('protocol is file', function () {
+    chai.assert.equal(guldEnv.protocol, 'file')
   })
 })

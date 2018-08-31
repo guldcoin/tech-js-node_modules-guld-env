@@ -1,65 +1,48 @@
-const pify = require('pify')
-const detectBrowser = require('detect-browser')
-const global = require('window-or-global')
+const { detect } = require('detect-browser')
+// expose all of platform.js to start with
+module.exports = require('platform')
+
+// declare and maybe define getos
 var getos
-var gotos
-var browser
-try {
-  getos = pify(require('getos'))
-} catch (e) {
-  getos = async function () {}
+if (module.exports.name === 'Node.js') getos = require('getos')
+// overwrite browser info with detect-browser
+const browser = detect()
+if (browser) {
+  module.exports.name = browser.name
+  module.exports.version = browser.version
 }
 
-async function getGotOs () {
-  if (gotos === undefined) gotos = await getos()
-  return gotos
-}
-
-function getBrowser () {
-  if (browser === undefined) browser = detectBrowser.detect()
-  return browser
-}
-
-function setGlobal (key, v) {
-  global[key] = v
-  return v
-}
-
-function getJS () {
-  if (global.JS) return global.JS
-  browser = getBrowser()
-  return setGlobal('JS', `${browser.name}@${browser.version}`)
-}
-
-async function getOS () {
-  if (global.OS) return global.OS
-  browser = getBrowser()
-  if (browser && browser.os && browser.os !== '') return setGlobal('OS', browser.os)
-  else {
-    gotos = await getGotOs()
-    if (gotos && gotos.os) return setGlobal('OS', gotos.os)
+// getos used only in node to fill in OS details
+if (typeof (getos) !== 'undefined' && module.exports.name === 'node') {
+  module.exports.os = async () => {
+    var info = await new Promise((resolve, reject) => {
+      getos((e, r) => {
+        if (e) reject(e)
+        else resolve(r)
+      })
+    })
+    return {
+      os: info.os,
+      dist: info.dist.replace(' Linux', ''),
+      codename: info.codename,
+      release: info.release
+    }
   }
-  return ''
+} else {
+  // otherwise reformat os async function to match pify getos output
+  var OS = module.exports.os
+  module.exports.os = async () => {
+    return {
+      os: OS.family || OS,
+      dist: undefined,
+      codename: undefined,
+      release: OS.version || undefined
+    }
+  }
 }
 
-async function getDist () {
-  if (global.DIST) return global.DIST
-  gotos = await getGotOs()
-  if (gotos.dist) return setGlobal('DIST', gotos.dist)
-  return ''
-}
-
-async function getRelease () {
-  if (global.OSRELEASE) return global.OSRELEASE
-  gotos = await getGotOs()
-  if (gotos && gotos.release) return setGlobal('OSRELEASE', `${gotos.release} ${gotos.codename}`)
-  return ''
-}
-
-module.exports = {
-  getJS: getJS,
-  getOS: getOS,
-  getDist: getDist,
-  getRelease: getRelease,
-  setGlobal: setGlobal
-}
+// add legacy syntax
+module.exports.JS = `${module.exports.name}@${module.exports.version}`
+// add protocol
+if (module.exports.name !== 'node' && typeof (window) !== 'undefined') module.exports.protocol = window.location.protocol.replace(':', '')
+else module.exports.protocol = 'node'

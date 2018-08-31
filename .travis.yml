@@ -5,6 +5,4 @@ sudo: false
 cache:
   directories:
     - node_modules
-script:
-  - npm test --allow-chrome-as-root
 

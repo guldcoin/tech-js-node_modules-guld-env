@@ -6,7 +6,7 @@
   "browser": "guld-env.min.js",
   "scripts": {
     "test": "npm run test:node && npm run test:browser",
-    "test:browser": "npm run build && mochify test/browser.js --url file://$PWD/test/test.html",
+    "test:browser": "npm run build && mochify test/browser.js --url file://$PWD/test/test.html --allow-chrome-as-root",
     "test:node": "mocha test/node.js",
     "lint": "eslint --env browser *.js* test/*.js",
     "fix": "eslint --fix *.js* test/*.js",

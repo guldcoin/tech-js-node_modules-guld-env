@@ -1,22 +1,25 @@
 # guld-env
 
-[![npm](https://img.shields.io/npm/v/guld-env.svg)](https://www.npmjs.com/package/guld-env) [![Build Status](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env.svg?branch=guld)](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env)
+[![npm](https://img.shields.io/npm/v/guld-env.svg)](https://www.npmjs.com/package/guld-env) [![Build Status](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env.svg?branch=guld)](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env) [![source](https://img.shields.io/badge/source-bitbucket-blue.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-env) [![issues](https://img.shields.io/badge/issues-bitbucket-yellow.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-env/issues) [![documentation](https://img.shields.io/badge/docs-guld.tech-green.svg)](https://guld.tech/lib/guld-env.html)
 
-Guld environment detection and configuration module.
-
-### Example Output
-
-```
-linux
-Ubuntu Linux
-18.04 bionic
-node@10.5.0
-```
+Guld environment detection module.
 
 ### Install
 
+##### Node
+
+```sh
+npm i  guld-env
 ```
-npm i guld-env
+##### Browser
+
+```sh
+curl https://bitbucket.org/guld/tech-js-node_modules-guld-env.git/raw/guld/guld-env.min.js -o guld-env.min.js
+```
+##### Browser
+
+```sh
+curl https://bitbucket.org/guld/tech-js-node_modules-guld-env.git/raw/guld/guld-env.min.js -o guld-env.min.js
 ```
 
 ### Usage
@@ -57,4 +60,8 @@ The cli for this module is named `guld-env-cli` and is available from guld git h
 ```
 npm i -g guld-env-cli
 ```
+
+### License
+
+MIT Copyright isysd
 

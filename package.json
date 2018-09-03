@@ -9,8 +9,7 @@
     "lint": "eslint --env browser *.js* test/*.js",
     "fix": "eslint --fix *.js* test/*.js",
     "build": "webpack",
-    "test:lint": "npm run lint && npm run test",
-    "preinstall": "npm link mochify; npm link puppeteer"
+    "test:lint": "npm run lint && npm run test"
   },
   "keywords": [
     "guld",

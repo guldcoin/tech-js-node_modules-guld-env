@@ -1,26 +1,12 @@
 # guld-env
 
-[![npm](https://img.shields.io/npm/v/guld-env.svg)](https://www.npmjs.com/package/guld-env) [![Build Status](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env.svg?branch=guld)](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env) [![source](https://img.shields.io/badge/source-bitbucket-blue.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-env) [![issues](https://img.shields.io/badge/issues-bitbucket-yellow.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-env/issues) [![documentation](https://img.shields.io/badge/docs-guld.tech-green.svg)](https://guld.tech/lib/guld-env.html)
+[![source](https://img.shields.io/badge/source-bitbucket-blue.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-env) [![issues](https://img.shields.io/badge/issues-bitbucket-yellow.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-env/issues) [![documentation](https://img.shields.io/badge/docs-guld.tech-green.svg)](https://guld.tech/lib/guld-env.html)
+
+[![node package manager](https://img.shields.io/npm/v/guld-env.svg)](https://www.npmjs.com/package/guld-env) [![travis-ci](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env.svg)](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-env?branch=guld) [![lgtm](https://img.shields.io/lgtm/grade/javascript/b/guld/tech-js-node_modules-guld-env.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/b/guld/tech-js-node_modules-guld-env/context:javascript) [![david-dm](https://david-dm.org/guldcoin/tech-js-node_modules-guld-env/status.svg)](https://david-dm.org/guldcoin/tech-js-node_modules-guld-env) [![david-dm](https://david-dm.org/guldcoin/tech-js-node_modules-guld-env/dev-status.svg)](https://david-dm.org/guldcoin/tech-js-node_modules-guld-env?type=dev)
 
 Guld environment detection module.
 
 ### Install
-
-##### Node
-
-```sh
-npm i  guld-env
-```
-##### Browser
-
-```sh
-curl https://bitbucket.org/guld/tech-js-node_modules-guld-env.git/raw/guld/guld-env.min.js -o guld-env.min.js
-```
-##### Browser
-
-```sh
-curl https://bitbucket.org/guld/tech-js-node_modules-guld-env.git/raw/guld/guld-env.min.js -o guld-env.min.js
-```
 
 ### Usage
 

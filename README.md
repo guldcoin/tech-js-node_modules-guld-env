@@ -13,11 +13,13 @@ Guld environment detection module.
 ```sh
 npm i guld-env
 ```
+
 ##### Browser
 
 ```sh
 curl https///bitbucket.org/guld/tech-js-node_modules-guld-env/raw/guld/guld-env.min.js -o guld-env.min.js
 ```
+
 ##### Browser
 
 ```sh

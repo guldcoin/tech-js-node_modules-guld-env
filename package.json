@@ -1,6 +1,6 @@
 {
   "name": "guld-env",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Guld environment detection module.",
   "scripts": {
     "test": "npm run test:node && npm run test:browser",

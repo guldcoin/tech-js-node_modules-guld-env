@@ -8,12 +8,15 @@
     "test:node": "mocha test/node.js",
     "lint": "eslint --env browser *.js* test/*.js",
     "fix": "eslint --fix *.js* test/*.js",
-    "build": "webpack-cli",
-    "test:lint": "npm run lint && npm run test"
+    "build": "webpack",
+    "test:lint": "npm run lint && npm run test",
+    "preinstall": "npm link mochify; npm link puppeteer"
   },
   "keywords": [
     "guld",
     "cli",
+    "node",
+    "browser",
     "OS detection",
     "browser detection",
     "distro detection",
@@ -52,5 +55,10 @@
     "node": ">=7"
   },
   "homepage": "https://guld.tech/lib/guld-env.html",
-  "repository": "https://bitbucket.org/guld/tech-js-node_modules-guld-env"
+  "repository": "https://bitbucket.org/guld/tech-js-node_modules-guld-env",
+  "main": "index.js",
+  "browser": "guld-env.min.js",
+  "eslintIgnore": [
+    "*.min.js"
+  ]
 }
